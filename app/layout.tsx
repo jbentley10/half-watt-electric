@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className="w-full flex flex-row align-center justify-between mx-9 py-16 bg-black">
+          <section className="w-1/2" id="logo">
+            <Image width="286" height="144" src="/hwe-logo.png" alt="Half-Watt Electric logo"/>
+          </section>
+          <section className="w-1/2 flex flex-row align-center" id="links-and-phone">
+            <div className="mr-11" id="links">
+              <Link className="pr-6" href="#services">Services</Link>
+              <Link className="pr-6" href="#testimonials">Testimonials</Link>
+              <Link className="pr-6" href="#about-us">About Us</Link>
+            </div>
+            <div id="phone">
+              <span>(999) 999-9999)</span>
+            </div>
+          </section>
+        </nav>
+        {children}
+        <footer>
+          <span>Footer</span>
+        </footer>
+      </body>
     </html>
   );
 }
