@@ -15,9 +15,6 @@ import Image from "next/image";
 import { LocaleContext } from "./locale-provider";
 
 const blockByType = (block) => {
-  console.log("I did it");
-  console.log(block);
-
   // Get the content type from the block content properties
   const contentType = block.sys.contentType.sys.id;
 
@@ -34,12 +31,9 @@ const blockByType = (block) => {
             />
           </div>
           <div id="hero__text" className="w-1/2 mr-36">
-            <h1>SAFE.</h1>
-            <h1>LOW-VOLT.</h1>
-            <h1>TESTED.</h1>
+            <h1>{block.fields.heading}</h1>
             <span>
-              Discover our low-voltage expertise: precision installs, fire-safe
-              solutions, and tested reliability for peace of mind.
+              {block.fields.subHeading}
             </span>
             <button>Get a quote</button>
           </div>
@@ -47,28 +41,7 @@ const blockByType = (block) => {
       );
       break;
     default:
-      return (
-        <div id="hero" className="flex flex-row items-center">
-          <div id="hero__image" className="w-1/2 ml-36">
-            <Image
-              src="/bolt.png"
-              width={690}
-              height={1235}
-              alt="A red lightning bolt"
-            />
-          </div>
-          <div id="hero__text" className="w-1/2 mr-36">
-            <h1>SAFE.</h1>
-            <h1>LOW-VOLT.</h1>
-            <h1>TESTED.</h1>
-            <span>
-              Discover our low-voltage expertise: precision installs, fire-safe
-              solutions, and tested reliability for peace of mind.
-            </span>
-            <button>Get a quote</button>
-          </div>
-        </div>
-      );
+      return false;
   }
 };
 
