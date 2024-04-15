@@ -24,7 +24,7 @@ const blockByType = (block) => {
     case "heroBlock":
       return (
         <div id="hero" className="flex flex-row items-center mb-64">
-          <div id="hero__image" className="w-1/2 ml-36 sm:hidden">
+          <div id="hero__image" className="w-1/2 xs:w-1/4 ml-36 sm:hidden xs:hidden">
             <Image
               src="/bolt.png"
               width={690}
@@ -32,7 +32,7 @@ const blockByType = (block) => {
               alt="A red lightning bolt"
             />
           </div>
-          <div id="hero__text" className="w-1/2 mr-36">
+          <div id="hero__text" className="w-1/2 xs:w-3/4 mr-36 xs:mr-44">
             <div className="block mb-24">
               <h1 className="text-8xl font-medium font-display uppercase mb-9">{block.fields.heading}</h1>
               <span className={'font-display text-2xl font-light'}>{block.fields.subHeading}</span>

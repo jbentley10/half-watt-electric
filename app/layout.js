@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {/* Navigation */}
-        <nav className="w-full flex flex-row align-center justify-between mx-9 py-16 bg-black">
-          <section className="w-1/2" id="logo">
+        <nav className="w-full flex flex-row align-center justify-between xs:justify-end lg:py-16 md:py-10 sm:py-8 xs:py-6 bg-black">
+          <section className="md:w-1/2 xs:w-1/4 lg:pl-36 md:pl-24 sm:pl-1" id="logo">
             <Image
               width={286}
               height={144}
@@ -27,21 +27,21 @@ export default function RootLayout({ children }) {
             />
           </section>
           <section
-            className="w-1/2 flex flex-row align-center"
+            className="md:w-1/2 xs:w-3/4 flex flex-row align-center md:space-evenly lg:pr-36 md:pr-24 sm:pr-1"
             id="links-and-phone"
           >
             <div className="mr-11" id="links">
-              <Link className="pr-6" href="#services">
+              <Link className="mr-6 lg:text-base sm:text-xs xs:text-xs" href="#services">
                 Services
               </Link>
-              <Link className="pr-6" href="#testimonials">
+              <Link className="mr-6 lg:text-base sm:text-xs xs:text-xs" href="#testimonials">
                 Testimonials
               </Link>
-              <Link className="pr-6" href="#about-us">
+              <Link className="mr-6 lg:text-base sm:text-xs xs:text-xs" href="#about-us">
                 About Us
               </Link>
             </div>
-            <div id="phone">
+            <div className={'lg:text-base sm:text-xs xs:text-xs'} id="phone">
               <span>(999) 999-9999)</span>
             </div>
           </section>
