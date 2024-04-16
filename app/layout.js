@@ -1,9 +1,10 @@
 import "./globals.css";
 
-import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+
+import FloatingActionButton from "./components/floating-action-button";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
           </section>
         </nav>
         {children}
+        <FloatingActionButton />
         <footer>
           <span>Footer</span>
         </footer>
