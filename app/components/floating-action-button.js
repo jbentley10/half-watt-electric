@@ -1,0 +1,34 @@
+/**
+ * @file floating-action-button.js
+ */
+"use client";
+
+// Import dependencies
+import { Fab, Typography } from "@mui/material";
+import LanguageIcon from "@mui/icons-material/Language";
+import { useContext } from "react";
+import { LocaleContext } from "../locale-provider";
+
+// Import styles
+
+const FloatingActionButton = () => {
+    const isEnglish = useContext(LocaleContext);
+
+    return (
+    <div className={"floating-action-button"}>
+        <Fab
+            variant="extended"
+            size="medium"
+            color="primary"
+            aria-label="add"
+            onClick={() => isEnglish.setIsEnglish((oldValue) => !oldValue)}
+        />
+        <LanguageIcon />
+        <Typography variant={"button"}>
+            {isEnglish.isEnglish ? "Leer en Español" : "Read in English"}
+        </Typography>
+    </div>
+    );
+};
+
+export default FloatingActionButton;
