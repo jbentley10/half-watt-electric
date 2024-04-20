@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} bg-gradient-to-br from-gradient-orange via-gradient-yellow to-gradient-red`}>
         {/* Navigation */}
-        <nav className="w-full flex flex-row align-center justify-between xs:justify-end lg:py-16 md:py-10 sm:py-8 xs:py-6 bg-black">
+        <nav className="w-full flex flex-row items-center justify-between xs:justify-end lg:py-16 md:py-10 sm:py-8 xs:py-6">
           <section className="md:w-1/2 xs:w-1/4 lg:pl-36 md:pl-24 sm:pl-1" id="logo">
             <Image
               width={286}
