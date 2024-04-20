@@ -13,16 +13,16 @@ const config: Config = {
     },
     screens: {
       'xs': '320px',
-      // => @media (min-width: 640px) { ... }
+      // => @media (min-width: 320px) { ... }
 
       'sm': '600px',
-      // => @media (min-width: 768px) { ... }
+      // => @media (min-width: 600px) { ... }
 
       'md': '840px',
-      // => @media (min-width: 1024px) { ... }
+      // => @media (min-width: 840px) { ... }
 
       'lg': '1380px',
-      // => @media (min-width: 1280px) { ... }
+      // => @media (min-width: 1380px) { ... }
     },
     extend: {
       backgroundImage: {
