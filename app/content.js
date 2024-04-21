@@ -18,12 +18,10 @@ const blockByType = (block) => {
   // Get the content type from the block content properties
   const contentType = block.sys.contentType.sys.id;
 
-  console.log(block);
-
   switch (contentType) {
     case "heroBlock":
       return (
-        <div id="hero" className="flex flex-row items-center mb-64">
+        <div id="hero" className="flex flex-row items-center md:mb-64 xs:mb-32">
           <div
             id="hero__image"
             className="w-1/2 xs:w-1/4 ml-36 sm:hidden xs:hidden"
@@ -35,7 +33,7 @@ const blockByType = (block) => {
               alt="A red lightning bolt"
             />
           </div>
-          <div id="hero__text" className="w-1/2 xs:w-3/4 mr-36 xs:mr-44">
+          <div id="hero__text" className="w-1/2 xs:w-3/4 mr-36 xs:mr-0">
             <div className="block mb-24">
               <h1 className="text-8xl font-medium font-display uppercase mb-9">
                 {block.fields.heading}
@@ -57,7 +55,7 @@ const blockByType = (block) => {
 
     case "whatWeDoBlock":
       return (
-        <div id="what-we-do" className="flex flex-col sm:mb-32 md:px-24 md:mb-64">
+        <div id="what-we-do" className="flex flex-col sm:mb-32 md:px-24 md:mb-64 xs:mb-32">
           <div className={"mb-20"} id="what-we-do__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
@@ -133,7 +131,7 @@ const blockByType = (block) => {
 
     case "whoWeAreBlock":
       return (
-        <div id="who-we-are" className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64">
+        <div id="who-we-are" className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32">
           <div className={"mb-20"} id="who-we-are__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
@@ -177,7 +175,7 @@ const blockByType = (block) => {
 
     case "servicesBlock":
       return (
-        <div id="services" className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64">
+        <div id="services" className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32">
           <div className={"mb-20"} id="services__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
@@ -187,8 +185,8 @@ const blockByType = (block) => {
             </span>
           </div>
           <div id="services__blocks">
-            <div className="flex flex-row">
-              <div id="services__block-1 mx-4">
+            <div className="flex flex-row mb-10">
+              <div id="services__block-1">
                 <h3 id="services__block-1__heading" className="text-3xl font-display mb-4">{block.fields.block1Heading}</h3>
                 <p id="services__block-1__body">{block.fields.block1Subheading}</p>
               </div>
@@ -197,7 +195,7 @@ const blockByType = (block) => {
                 <p id="services__block-2__body">{block.fields.block2Subheading}</p>
               </div>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row mb-10">
               <div id="services__block-3 mx-4">
                 <h3 id="services__block-3__heading" className="text-3xl font-display mb-4">{block.fields.block3Heading}</h3>
                 <p id="services__block-3__body">{block.fields.block3Subheading}</p>
