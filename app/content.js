@@ -277,6 +277,16 @@ const blockByType = (block) => {
           </div>
         </div>
       );
+
+    case "footerBlock":
+      return (
+        <footer className="flex flex-col items-center">
+            <span className="mb-4 font-semibold">{block.fields.companyName}</span>
+            <span className="mb-4">{block.fields.copyrightInformation}</span>
+            <span className="mb-4">{block.fields.phoneNumber}</span>
+          </footer>
+      );
+
     default:
       return false;
   }

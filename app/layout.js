@@ -75,9 +75,6 @@ export default function RootLayout({ children }) {
           </nav>
           {children}
           <FloatingActionButton />
-          <footer>
-            <span>Footer</span>
-          </footer>
         </LocaleContext.Provider>
       </body>
     </html>
