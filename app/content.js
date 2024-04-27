@@ -13,6 +13,11 @@ import Image from "next/image";
 
 // Import components
 import { LocaleContext } from "./locale-provider";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+function isEven(num) {
+  return num % 2 === 0;
+}
 
 const blockByType = (block) => {
   // Get the content type from the block content properties
@@ -275,16 +280,42 @@ const blockByType = (block) => {
               {block.fields.subheading}
             </span>
           </div>
+          {block.fields.testimonialBlocks.map((testimonial, index) => (
+            <section
+              className={`flex flex-col ${
+                isEven(index) ? "items-start" : "items-end"
+              }`}
+              key={index + 2}
+              id="testimonial-block"
+            >
+              <div className={`flex flex-col items-start`}>
+                <blockquote className="italic text-2xl border-solid border-zinc-600 border-l-8 py-6 pl-4 mb-4">
+                  {documentToReactComponents(testimonial.fields.quote)}
+                </blockquote>
+                <div
+                  className={`flex flex-col pl-7`}
+                  id="attribute"
+                >
+                  <div id="attribute-name">
+                    {testimonial.fields.customerName}
+                  </div>
+                  <div className="italic" id="attribute-company">
+                    {testimonial.fields.customerCompany}
+                  </div>
+                </div>
+              </div>
+            </section>
+          ))}
         </div>
       );
 
     case "footerBlock":
       return (
         <footer className="flex flex-col items-center">
-            <span className="mb-4 font-semibold">{block.fields.companyName}</span>
-            <span className="mb-4">{block.fields.copyrightInformation}</span>
-            <span className="mb-4">{block.fields.phoneNumber}</span>
-          </footer>
+          <span className="mb-4 font-semibold">{block.fields.companyName}</span>
+          <span className="mb-4">{block.fields.copyrightInformation}</span>
+          <span className="mb-4">{block.fields.phoneNumber}</span>
+        </footer>
       );
 
     default:
