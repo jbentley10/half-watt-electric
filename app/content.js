@@ -55,7 +55,10 @@ const blockByType = (block) => {
 
     case "whatWeDoBlock":
       return (
-        <div id="what-we-do" className="flex flex-col sm:mb-32 md:px-24 md:mb-64 xs:mb-32">
+        <div
+          id="what-we-do"
+          className="flex flex-col sm:mb-32 md:px-24 md:mb-64 xs:mb-32"
+        >
           <div className={"mb-20"} id="what-we-do__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
@@ -64,7 +67,10 @@ const blockByType = (block) => {
               {block.fields.subheading}
             </span>
           </div>
-          <div className="flex flex-row items-center space-between md:mb-12" id="what-we-do__1">
+          <div
+            className="flex flex-row items-center space-between md:mb-12"
+            id="what-we-do__1"
+          >
             <div className="w-1/2 md:pr-14" id="what-we-do__text">
               <ul>
                 <li className={"mb-12"}>
@@ -131,7 +137,10 @@ const blockByType = (block) => {
 
     case "whoWeAreBlock":
       return (
-        <div id="who-we-are" className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32">
+        <div
+          id="who-we-are"
+          className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32"
+        >
           <div className={"mb-20"} id="who-we-are__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
@@ -140,11 +149,12 @@ const blockByType = (block) => {
               {block.fields.subheading}
             </span>
           </div>
-          <div id="who-we-are__profiles" className="flex flex-row space-between">
+          <div
+            id="who-we-are__profiles"
+            className="flex flex-row space-between"
+          >
             <div id="who-we-are__profile--1">
-              <div id="who-we-are__profile-1__image">
-                
-              </div>
+              <div id="who-we-are__profile-1__image"></div>
               <div id="who-we-are__profile-1__heading">
                 <h3>{block.fields.block1Heading}</h3>
               </div>
@@ -156,9 +166,7 @@ const blockByType = (block) => {
               </div>
             </div>
             <div id="who-we-are__profile--2">
-              <div id="who-we-are__profile-2__image">
-                
-              </div>
+              <div id="who-we-are__profile-2__image"></div>
               <div id="who-we-are__profile-2__heading">
                 <h3>{block.fields.block2Heading}</h3>
               </div>
@@ -175,7 +183,10 @@ const blockByType = (block) => {
 
     case "servicesBlock":
       return (
-        <div id="services" className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32">
+        <div
+          id="services"
+          className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32"
+        >
           <div className={"mb-20"} id="services__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
@@ -187,28 +198,63 @@ const blockByType = (block) => {
           <div id="services__blocks">
             <div className="flex flex-row mb-10">
               <div id="services__block-1">
-                <h3 id="services__block-1__heading" className="text-3xl font-display mb-4">{block.fields.block1Heading}</h3>
-                <p id="services__block-1__body">{block.fields.block1Subheading}</p>
+                <h3
+                  id="services__block-1__heading"
+                  className="text-3xl font-display mb-4"
+                >
+                  {block.fields.block1Heading}
+                </h3>
+                <p id="services__block-1__body">
+                  {block.fields.block1Subheading}
+                </p>
               </div>
               <div id="services__block-2 mx-4">
-                <h3 id="services__block-2__heading" className="text-3xl font-display mb-4">{block.fields.block2Heading}</h3>
-                <p id="services__block-2__body">{block.fields.block2Subheading}</p>
+                <h3
+                  id="services__block-2__heading"
+                  className="text-3xl font-display mb-4"
+                >
+                  {block.fields.block2Heading}
+                </h3>
+                <p id="services__block-2__body">
+                  {block.fields.block2Subheading}
+                </p>
               </div>
             </div>
             <div className="flex flex-row mb-10">
               <div id="services__block-3 mx-4">
-                <h3 id="services__block-3__heading" className="text-3xl font-display mb-4">{block.fields.block3Heading}</h3>
-                <p id="services__block-3__body">{block.fields.block3Subheading}</p>
+                <h3
+                  id="services__block-3__heading"
+                  className="text-3xl font-display mb-4"
+                >
+                  {block.fields.block3Heading}
+                </h3>
+                <p id="services__block-3__body">
+                  {block.fields.block3Subheading}
+                </p>
               </div>
               <div id="services__block-4 mx-4">
-                <h3 id="services__block-4__heading" className="text-3xl font-display mb-4">{block.fields.block4Heading}</h3>
-                <p id="services__block-4__body">{block.fields.block4Subheading}</p>
+                <h3
+                  id="services__block-4__heading"
+                  className="text-3xl font-display mb-4"
+                >
+                  {block.fields.block4Heading}
+                </h3>
+                <p id="services__block-4__body">
+                  {block.fields.block4Subheading}
+                </p>
               </div>
             </div>
             <div className="flex flex-row">
               <div id="services__block-5 mx-4">
-                <h3 id="services__block-5__heading" className="text-3xl font-display mb-4">{block.fields.block5Heading}</h3>
-                <p id="services__block-5__body">{block.fields.block5Subheading}</p>
+                <h3
+                  id="services__block-5__heading"
+                  className="text-3xl font-display mb-4"
+                >
+                  {block.fields.block5Heading}
+                </h3>
+                <p id="services__block-5__body">
+                  {block.fields.block5Subheading}
+                </p>
               </div>
             </div>
           </div>
@@ -217,7 +263,10 @@ const blockByType = (block) => {
 
     case "testimonials":
       return (
-        <div id="testimonials" className="flex flex-col w-full md:px-24 md:mb-64">
+        <div
+          id="testimonials"
+          className="flex flex-col w-full md:px-24 md:mb-64"
+        >
           <div className={"mb-20"} id="testimonials__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
               {block.fields.heading}
