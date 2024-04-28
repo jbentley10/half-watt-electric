@@ -33,7 +33,8 @@ const config: Config = {
       colors: {
         'gradient-orange': '#ffc683',
         'gradient-yellow': '#fee783',
-        'gradient-red': '#f6818b'
+        'gradient-red': '#f6818b',
+        'brand-primary': '#FB3939'
       }
     },
   },
