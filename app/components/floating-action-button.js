@@ -18,18 +18,17 @@ const FloatingActionButton = () => {
         "floating-action-button fixed lg:bottom-14 lg:right-14 xs:bottom-9 xs:right-9"
       }
     >
-      <Fab
-        variant="extended"
-        size="medium"
-        color="primary"
+      <button
+        className={
+          "bg-white text-brand-primary border-brand-primary border-4 rounded-xl px-7 py-4 md:text-xl sm:text-lg font-display font-medium"
+        }
         aria-label="add"
         onClick={() => isEnglish.setIsEnglish((oldValue) => !oldValue)}
       >
         <LanguageIcon />
-        <Typography variant={"button"}>
-          {isEnglish.isEnglish ? "Leer en Español" : "Read in English"}
-        </Typography>
-      </Fab>
+
+        {isEnglish.isEnglish ? "Leer en Español" : "Read in English"}
+      </button>
     </div>
   );
 };

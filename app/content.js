@@ -62,7 +62,7 @@ const blockByType = (block) => {
       return (
         <div
           id="what-we-do"
-          className="flex flex-col sm:mb-32 md:px-24 md:mb-64 xs:mb-32"
+          className="flex flex-col xs:px-4 sm:px-8 md:px-24 sm:mb-32 md:mb-64 xs:mb-32"
         >
           <div className={"mb-20"} id="what-we-do__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
@@ -144,7 +144,7 @@ const blockByType = (block) => {
       return (
         <div
           id="who-we-are"
-          className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32"
+          className="flex flex-col w-full xs:px-4 sm:px-8 md:px-24 xs:mb-32 sm:mb-32 md:mb-64"
         >
           <div className={"mb-20"} id="who-we-are__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
@@ -190,7 +190,7 @@ const blockByType = (block) => {
       return (
         <div
           id="services"
-          className="flex flex-col w-full sm:mb-32 md:px-24 md:mb-64 xs:mb-32"
+          className="flex flex-col w-full xs:px-4 sm:px-8 md:px-24 xs:mb-32 md:mb-64"
         >
           <div className={"mb-20"} id="services__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
@@ -270,7 +270,7 @@ const blockByType = (block) => {
       return (
         <div
           id="testimonials"
-          className="flex flex-col w-full md:px-24 md:mb-64"
+          className="flex flex-col w-full xs:px-4 sm:px-8 md:px-24 xs:mb-32 md:mb-64"
         >
           <div className={"mb-20"} id="testimonials__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
