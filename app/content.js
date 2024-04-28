@@ -187,30 +187,40 @@ const blockByType = (block) => {
             id="who-we-are__profiles"
             className="flex flex-row space-between"
           >
-            <div id="who-we-are__profile--1">
-              <div id="who-we-are__profile-1__image"></div>
-              <div id="who-we-are__profile-1__heading">
-                <h3>{block.fields.block1Heading}</h3>
+            {block.fields.staff.map((staff, index) => (
+              <div key={index} id={`who-we-are__profile--${index}`}>
+                <div id={`who-we-are__profile-${index}__image`}>
+                <Image
+                    className={`rounded-3xl`}
+                    src={
+                      staff.fields.image !== undefined
+                        ? `https:${staff.fields.image.fields.file.url}`
+                        : false
+                    }
+                    width={
+                      staff.fields.image !== undefined
+                        ? staff.fields.image.fields.file.details.image.width
+                        : false
+                    }
+                    height={
+                      staff.fields.image !== undefined
+                        ? staff.fields.image.fields.file.details.image.height
+                        : false
+                    }
+                    alt={staff.fields.image.fields.title}
+                  />
+                </div>
+                <div id="who-we-are__profile-1__heading">
+                  <h3>{staff.fields.heading}</h3>
+                </div>
+                <div id="who-we-are__profile-1__title">
+                  <span>{staff.fields.role}</span>
+                </div>
+                <div id="who-we-are__profile-1__subheading">
+                  <div>{documentToReactComponents(staff.fields.bio)}</div>
+                </div>
               </div>
-              <div id="who-we-are__profile-1__title">
-                <span>{block.fields.block1Title}</span>
-              </div>
-              <div id="who-we-are__profile-1__subheading">
-                <p>{block.fields.block1Subheading}</p>
-              </div>
-            </div>
-            <div id="who-we-are__profile--2">
-              <div id="who-we-are__profile-2__image"></div>
-              <div id="who-we-are__profile-2__heading">
-                <h3>{block.fields.block2Heading}</h3>
-              </div>
-              <div id="who-we-are__profile-2__title">
-                <span>{block.fields.block2Title}</span>
-              </div>
-              <div id="who-we-are__profile-2__subheading">
-                <p>{block.fields.block2Subheading}</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       );
