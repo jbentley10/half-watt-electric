@@ -59,6 +59,7 @@ const blockByType = (block) => {
       );
 
     case "whatWeDoBlock":
+      console.log(block.fields.rightImage.fields.file)
       return (
         <div
           id="what-we-do"
@@ -99,21 +100,49 @@ const blockByType = (block) => {
 
             <div id="what-we-do__image" className="w-1/2 md:px-14">
               <Image
-                src="/what-we-do.png"
-                width={1206}
-                height={765}
-                alt="An image of something"
+                className={`rounded-3xl drop-shadow-image`}
+                src={
+                  block.fields.rightImage !== undefined
+                    ? `https:${block.fields.rightImage.fields.file.url}`
+                    : false
+                }
+                width={
+                  block.fields.rightImage !== undefined
+                    ? block.fields.rightImage.fields.file.details.image.width
+                    : false
+                }
+                height={
+                  block.fields.rightImage !== undefined
+                    ? block.fields.rightImage.fields.file.details.image.height
+                    : false
+                }
+                alt={block.fields.rightImage.fields.title}
               />
             </div>
           </div>
           <div className="flex flex-row items-center" id="what-we-do__2">
             <div id="what-we-do__image" className="w-1/2 md:pr-14">
-              <Image
-                src="/what-we-do.png"
-                width={1206}
-                height={765}
-                alt="An image of something"
-              />
+              <div className={`drop-shadow-image rounded-3xl border-white`}>
+                <Image
+                  className={`rounded-3xl`}
+                  src={
+                    block.fields.leftImage !== undefined
+                      ? `https:${block.fields.leftImage.fields.file.url}`
+                      : false
+                  }
+                  width={
+                    block.fields.leftImage !== undefined
+                      ? block.fields.leftImage.fields.file.details.image.width
+                      : false
+                  }
+                  height={
+                    block.fields.leftImage !== undefined
+                      ? block.fields.leftImage.fields.file.details.image.height
+                      : false
+                  }
+                  alt={block.fields.leftImage.fields.title}
+                />
+              </div>
             </div>
 
             <div className="w-1/2 md:px-14" id="what-we-do__text">
@@ -292,10 +321,7 @@ const blockByType = (block) => {
                 <blockquote className="italic text-2xl border-solid border-zinc-600 border-l-8 py-6 pl-4 mb-4">
                   {documentToReactComponents(testimonial.fields.quote)}
                 </blockquote>
-                <div
-                  className={`flex flex-col pl-7`}
-                  id="attribute"
-                >
+                <div className={`flex flex-col pl-7`} id="attribute">
                   <div id="attribute-name">
                     {testimonial.fields.customerName}
                   </div>
