@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
               />
             </section>
             <section
-              className="md:w-1/2 sm:w-4/6 xs:w-3/4 flex flex-row xs:justify-end md:space-evenly lg:justify-end align-center items-center lg:pr-36 md:pr-24 sm:pr-2 xs:pr-4"
+              className="md:w-1/2 sm:w-4/6 xs:w-3/4 flex flex-row xs:justify-end md:space-evenly lg:justify-start align-center items-center lg:pr-36 md:pr-24 sm:pr-8 xs:pr-4"
               id="links-and-phone"
             >
               <div className="xs:mr-2 sm:mr-11 lg:mr-28" id="links">

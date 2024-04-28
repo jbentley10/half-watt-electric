@@ -26,10 +26,10 @@ const blockByType = (block) => {
   switch (contentType) {
     case "heroBlock":
       return (
-        <div id="hero" className="flex flex-row items-center md:mb-64 xs:mb-32">
+        <div id="hero" className="flex flex-row items-center md:mb-64 xs:mb-32 xs:pl-4">
           <div
             id="hero__image"
-            className="lg:w-1/2 lg:pl-40 lg:pr-72 xs:w-1/4 sm:inline xs:hidden xs:hidden"
+            className="sm:w-2/6 md:w-1/2 lg:w-1/2 sm:pl-8 md:pl-12 md:pr-24 lg:pl-40 lg:pr-96 xs:w-1/4 sm:inline xs:hidden xs:hidden"
           >
             <Image
               src="/bolt.png"
@@ -38,18 +38,18 @@ const blockByType = (block) => {
               alt="A red lightning bolt"
             />
           </div>
-          <div id="hero__text" className="lg:w-1/2 xs:w-3/4 lg:pr-36 xs:mr-0">
-            <div className="block mb-24">
-              <h1 className="text-8xl font-regular font-display uppercase mb-9">
+          <div id="hero__text" className="sm:w-4/6 md:w-1/2 lg:w-1/2 xs:w-3/4 sm:px-8 md:pr-24 lg:pr-36 xs:mr-0">
+            <div className="block sm:mb-24 xs:mb-12">
+              <h1 className="xs:text-7xl md:text-8xl font-regular font-display uppercase sm:mb-9 xs:mb-4">
                 {block.fields.heading}
               </h1>
-              <span className={"font-display text-2xl font-light"}>
+              <span className={"font-display md:text-2xl xs:text-xl font-light"}>
                 {block.fields.subHeading}
               </span>
             </div>
             <button
               className={
-                "bg-brand-primary text-white border-white border-4 rounded-xl px-8 py-5 text-3xl font-display font-medium"
+                "bg-brand-primary text-white border-white border-4 rounded-xl px-8 py-5 md:text-3xl sm:text-2xl font-display font-medium"
               }
             >
               Get a quote
