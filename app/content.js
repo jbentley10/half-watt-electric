@@ -59,7 +59,6 @@ const blockByType = (block) => {
       );
 
     case "whatWeDoBlock":
-      console.log(block.fields.rightImage.fields.file)
       return (
         <div
           id="what-we-do"
