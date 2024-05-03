@@ -34,6 +34,9 @@ const config: Config = {
         'gradient-orange': '#ffc683',
         'gradient-yellow': '#fee783',
         'gradient-red': '#f6818b'
+      },
+      dropShadow: {
+        'image': '25px 25px 0 0 rgba(220, 220, 220, 0.42)'
       }
     },
   },

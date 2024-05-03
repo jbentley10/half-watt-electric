@@ -99,21 +99,49 @@ const blockByType = (block) => {
 
             <div id="what-we-do__image" className="w-1/2 md:px-14">
               <Image
-                src="/what-we-do.png"
-                width={1206}
-                height={765}
-                alt="An image of something"
+                className={`rounded-3xl drop-shadow-image`}
+                src={
+                  block.fields.rightImage !== undefined
+                    ? `https:${block.fields.rightImage.fields.file.url}`
+                    : false
+                }
+                width={
+                  block.fields.rightImage !== undefined
+                    ? block.fields.rightImage.fields.file.details.image.width
+                    : false
+                }
+                height={
+                  block.fields.rightImage !== undefined
+                    ? block.fields.rightImage.fields.file.details.image.height
+                    : false
+                }
+                alt={block.fields.rightImage.fields.title}
               />
             </div>
           </div>
           <div className="flex flex-row items-center" id="what-we-do__2">
             <div id="what-we-do__image" className="w-1/2 md:pr-14">
-              <Image
-                src="/what-we-do.png"
-                width={1206}
-                height={765}
-                alt="An image of something"
-              />
+              <div className={`drop-shadow-image rounded-3xl border-white`}>
+                <Image
+                  className={`rounded-3xl`}
+                  src={
+                    block.fields.leftImage !== undefined
+                      ? `https:${block.fields.leftImage.fields.file.url}`
+                      : false
+                  }
+                  width={
+                    block.fields.leftImage !== undefined
+                      ? block.fields.leftImage.fields.file.details.image.width
+                      : false
+                  }
+                  height={
+                    block.fields.leftImage !== undefined
+                      ? block.fields.leftImage.fields.file.details.image.height
+                      : false
+                  }
+                  alt={block.fields.leftImage.fields.title}
+                />
+              </div>
             </div>
 
             <div className="w-1/2 md:px-14" id="what-we-do__text">
@@ -158,30 +186,40 @@ const blockByType = (block) => {
             id="who-we-are__profiles"
             className="flex flex-row space-between"
           >
-            <div id="who-we-are__profile--1">
-              <div id="who-we-are__profile-1__image"></div>
-              <div id="who-we-are__profile-1__heading">
-                <h3>{block.fields.block1Heading}</h3>
+            {block.fields.staff.map((staff, index) => (
+              <div key={index} id={`who-we-are__profile--${index}`}>
+                <div id={`who-we-are__profile-${index}__image`}>
+                <Image
+                    className={`rounded-3xl`}
+                    src={
+                      staff.fields.image !== undefined
+                        ? `https:${staff.fields.image.fields.file.url}`
+                        : false
+                    }
+                    width={
+                      staff.fields.image !== undefined
+                        ? staff.fields.image.fields.file.details.image.width
+                        : false
+                    }
+                    height={
+                      staff.fields.image !== undefined
+                        ? staff.fields.image.fields.file.details.image.height
+                        : false
+                    }
+                    alt={staff.fields.image.fields.title}
+                  />
+                </div>
+                <div id="who-we-are__profile-1__heading">
+                  <h3>{staff.fields.heading}</h3>
+                </div>
+                <div id="who-we-are__profile-1__title">
+                  <span>{staff.fields.role}</span>
+                </div>
+                <div id="who-we-are__profile-1__subheading">
+                  <div>{documentToReactComponents(staff.fields.bio)}</div>
+                </div>
               </div>
-              <div id="who-we-are__profile-1__title">
-                <span>{block.fields.block1Title}</span>
-              </div>
-              <div id="who-we-are__profile-1__subheading">
-                <p>{block.fields.block1Subheading}</p>
-              </div>
-            </div>
-            <div id="who-we-are__profile--2">
-              <div id="who-we-are__profile-2__image"></div>
-              <div id="who-we-are__profile-2__heading">
-                <h3>{block.fields.block2Heading}</h3>
-              </div>
-              <div id="who-we-are__profile-2__title">
-                <span>{block.fields.block2Title}</span>
-              </div>
-              <div id="who-we-are__profile-2__subheading">
-                <p>{block.fields.block2Subheading}</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       );
@@ -292,10 +330,7 @@ const blockByType = (block) => {
                 <blockquote className="italic text-2xl border-solid border-zinc-600 border-l-8 py-6 pl-4 mb-4">
                   {documentToReactComponents(testimonial.fields.quote)}
                 </blockquote>
-                <div
-                  className={`flex flex-col pl-7`}
-                  id="attribute"
-                >
+                <div className={`flex flex-col pl-7`} id="attribute">
                   <div id="attribute-name">
                     {testimonial.fields.customerName}
                   </div>
