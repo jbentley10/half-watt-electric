@@ -99,7 +99,7 @@ const blockByType = (block) => {
 
             <div id="what-we-do__image" className="w-1/2 md:px-14">
               <Image
-                className={`rounded-3xl drop-shadow-image`}
+                className={`rounded-3xl shadow-image`}
                 src={
                   block.fields.rightImage !== undefined
                     ? `https:${block.fields.rightImage.fields.file.url}`
@@ -121,9 +121,9 @@ const blockByType = (block) => {
           </div>
           <div className="flex flex-row items-center" id="what-we-do__2">
             <div id="what-we-do__image" className="w-1/2 md:pr-14">
-              <div className={`drop-shadow-image rounded-3xl border-white`}>
+              <div className={`border-white`}>
                 <Image
-                  className={`rounded-3xl`}
+                  className={`rounded-3xl shadow-image`}
                   src={
                     block.fields.leftImage !== undefined
                       ? `https:${block.fields.leftImage.fields.file.url}`

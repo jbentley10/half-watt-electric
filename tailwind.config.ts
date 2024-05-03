@@ -35,8 +35,8 @@ const config: Config = {
         'gradient-yellow': '#fee783',
         'gradient-red': '#f6818b'
       },
-      dropShadow: {
-        'image': '25px 25px 0 0 rgba(220, 220, 220, 0.42)'
+      boxShadow: {
+        'image': '12px 15px 0 0 rgba(220, 220, 220, 0.42)'
       }
     },
   },
