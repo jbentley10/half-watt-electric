@@ -26,10 +26,10 @@ const blockByType = (block) => {
   switch (contentType) {
     case "heroBlock":
       return (
-        <div id="hero" className="flex flex-row items-center md:mb-64 xs:mb-32">
+        <div id="hero" className="flex flex-row items-center md:gap-32 md:px-24 md:mb-64 xs:mb-32">
           <div
             id="hero__image"
-            className="w-1/2 xs:w-1/4 ml-36 sm:hidden xs:hidden"
+            className="w-1/2 xs:w-1/4 md:inline sm:hidden xs:hidden"
           >
             <Image
               src="/bolt.png"
@@ -73,7 +73,7 @@ const blockByType = (block) => {
             </span>
           </div>
           <div
-            className="flex flex-row items-center space-between md:mb-12"
+            className="flex flex-row items-center space-between md:mb-12 xs:gap-24 md:gap-0"
             id="what-we-do__1"
           >
             <div className="w-1/2 md:pr-14" id="what-we-do__text">
@@ -99,7 +99,7 @@ const blockByType = (block) => {
 
             <div id="what-we-do__image" className="w-1/2 md:px-14">
               <Image
-                className={`rounded-3xl drop-shadow-image`}
+                className={`rounded-3xl shadow-image`}
                 src={
                   block.fields.rightImage !== undefined
                     ? `https:${block.fields.rightImage.fields.file.url}`
@@ -119,11 +119,11 @@ const blockByType = (block) => {
               />
             </div>
           </div>
-          <div className="flex flex-row items-center" id="what-we-do__2">
+          <div className="flex flex-row items-center xs:gap-24 md:gap-0" id="what-we-do__2">
             <div id="what-we-do__image" className="w-1/2 md:pr-14">
-              <div className={`drop-shadow-image rounded-3xl border-white`}>
+              <div className={`border-white`}>
                 <Image
-                  className={`rounded-3xl`}
+                  className={`rounded-3xl shadow-image`}
                   src={
                     block.fields.leftImage !== undefined
                       ? `https:${block.fields.leftImage.fields.file.url}`
@@ -184,10 +184,10 @@ const blockByType = (block) => {
           </div>
           <div
             id="who-we-are__profiles"
-            className="flex flex-row space-between"
+            className="flex flex-row space-between gap-28 md:justify-center"
           >
             {block.fields.staff.map((staff, index) => (
-              <div key={index} id={`who-we-are__profile--${index}`}>
+              <div key={index} id={`who-we-are__profile--${index}`} className="xs:w-52 md:w-1/3">
                 <div id={`who-we-are__profile-${index}__image`}>
                 <Image
                     className={`rounded-3xl`}
@@ -209,11 +209,11 @@ const blockByType = (block) => {
                     alt={staff.fields.image.fields.title}
                   />
                 </div>
-                <div id="who-we-are__profile-1__heading">
-                  <h3>{staff.fields.heading}</h3>
+                <div id="who-we-are__profile-1__heading" className={'mt-8 pb-1'}>
+                  <h3 className={'font-bold text-xl'}>{staff.fields.heading}</h3>
                 </div>
-                <div id="who-we-are__profile-1__title">
-                  <span>{staff.fields.role}</span>
+                <div id="who-we-are__profile-1__title" className={'pb-4'}>
+                  <span className={'italic text-lg pb-2'}>{staff.fields.role}</span>
                 </div>
                 <div id="who-we-are__profile-1__subheading">
                   <div>{documentToReactComponents(staff.fields.bio)}</div>
@@ -239,8 +239,8 @@ const blockByType = (block) => {
             </span>
           </div>
           <div id="services__blocks">
-            <div className="flex flex-row mb-10">
-              <div id="services__block-1">
+            <div className="flex flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
+              <div id="services__block-1" className={'w-full'}>
                 <h3
                   id="services__block-1__heading"
                   className="text-3xl font-display mb-4"
@@ -251,7 +251,7 @@ const blockByType = (block) => {
                   {block.fields.block1Subheading}
                 </p>
               </div>
-              <div id="services__block-2 mx-4">
+              <div id="services__block-2" className={'w-full'}>
                 <h3
                   id="services__block-2__heading"
                   className="text-3xl font-display mb-4"
@@ -263,8 +263,8 @@ const blockByType = (block) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row mb-10">
-              <div id="services__block-3 mx-4">
+            <div className="flex flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
+              <div id="services__block-3" className={'w-full'}>
                 <h3
                   id="services__block-3__heading"
                   className="text-3xl font-display mb-4"
@@ -275,7 +275,7 @@ const blockByType = (block) => {
                   {block.fields.block3Subheading}
                 </p>
               </div>
-              <div id="services__block-4 mx-4">
+              <div id="services__block-4" className={'w-full'}>
                 <h3
                   id="services__block-4__heading"
                   className="text-3xl font-display mb-4"
@@ -288,7 +288,7 @@ const blockByType = (block) => {
               </div>
             </div>
             <div className="flex flex-row">
-              <div id="services__block-5 mx-4">
+              <div id="services__block-5">
                 <h3
                   id="services__block-5__heading"
                   className="text-3xl font-display mb-4"
@@ -308,7 +308,7 @@ const blockByType = (block) => {
       return (
         <div
           id="testimonials"
-          className="flex flex-col w-full md:px-24 md:mb-64"
+          className="flex flex-col w-full md:px-24 xs:mb-32 md:mb-64"
         >
           <div className={"mb-20"} id="testimonials__heading">
             <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
