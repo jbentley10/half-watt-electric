@@ -184,7 +184,7 @@ const blockByType = (block) => {
           </div>
           <div
             id="who-we-are__profiles"
-            className="flex flex-row space-between gap-28 md:justify-center"
+            className="flex flex-row space-between xs:gap-12 sm:gap-20 md:gap-28 md:justify-center"
           >
             {block.fields.staff.map((staff, index) => (
               <div key={index} id={`who-we-are__profile--${index}`} className="xs:w-52 md:w-1/3">
