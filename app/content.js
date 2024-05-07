@@ -320,7 +320,7 @@ const blockByType = (block) => {
           </div>
           {block.fields.testimonialBlocks.map((testimonial, index) => (
             <section
-              className={`flex flex-col ${
+              className={`flex flex-col xs:mb-20 md:mb-0 ${
                 isEven(index) ? "items-start" : "items-end"
               }`}
               key={index + 2}
