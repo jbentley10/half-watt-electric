@@ -73,10 +73,10 @@ const blockByType = (block) => {
             </span>
           </div>
           <div
-            className="flex flex-row items-center space-between md:mb-12 xs:gap-24 md:gap-0"
+            className="xs:block md:flex md:flex-row md:items-center md:space-between xs:mb-20 md:mb-12 xs:gap-24 md:gap-0"
             id="what-we-do__1"
           >
-            <div className="w-1/2 md:pr-14" id="what-we-do__text">
+            <div className="xs:w-full md:w-1/2 md:pr-14" id="what-we-do__text">
               <ul>
                 <li className={"mb-12"}>
                   <h3 className={"font-display text-3xl leading-tight mb-4"}>
@@ -97,7 +97,7 @@ const blockByType = (block) => {
               </ul>
             </div>
 
-            <div id="what-we-do__image" className="w-1/2 md:px-14">
+            <div id="what-we-do__image" className="xs:w-full md:w-1/2 md:px-14">
               <Image
                 className={`rounded-3xl shadow-image`}
                 src={
@@ -119,8 +119,8 @@ const blockByType = (block) => {
               />
             </div>
           </div>
-          <div className="flex flex-row items-center xs:gap-24 md:gap-0" id="what-we-do__2">
-            <div id="what-we-do__image" className="w-1/2 md:pr-14">
+          <div className="xs:block md:flex md:flex-row md:items-center md:space-between xs:gap-24 md:gap-0" id="what-we-do__2">
+            <div id="what-we-do__image" className="xs:w-full md:w-1/2 md:pr-14 xs:mb-8 md:mb-0">
               <div className={`border-white`}>
                 <Image
                   className={`rounded-3xl shadow-image`}
@@ -144,7 +144,7 @@ const blockByType = (block) => {
               </div>
             </div>
 
-            <div className="w-1/2 md:px-14" id="what-we-do__text">
+            <div className="xs:w-full md:w-1/2 md:px-14" id="what-we-do__text">
               <ul>
                 <li className={"mb-12"}>
                   <h3 className={"font-display text-3xl leading-tight mb-4"}>
@@ -187,7 +187,7 @@ const blockByType = (block) => {
             className="flex flex-row space-between xs:gap-12 sm:gap-20 md:gap-28 md:justify-center"
           >
             {block.fields.staff.map((staff, index) => (
-              <div key={index} id={`who-we-are__profile--${index}`} className="xs:w-52 md:w-1/3">
+              <div key={index} id={`who-we-are__profile--${index}`} className="xs:w-1/2 md:w-1/3">
                 <div id={`who-we-are__profile-${index}__image`}>
                 <Image
                     className={`rounded-3xl`}
@@ -239,8 +239,8 @@ const blockByType = (block) => {
             </span>
           </div>
           <div id="services__blocks">
-            <div className="flex flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
-              <div id="services__block-1" className={'w-full'}>
+            <div className="xs:inline md:flex md:flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
+              <div id="services__block-1" className={'xs:mb-8 md:mb-0 w-full'}>
                 <h3
                   id="services__block-1__heading"
                   className="text-3xl font-display mb-4"
@@ -251,7 +251,7 @@ const blockByType = (block) => {
                   {block.fields.block1Subheading}
                 </p>
               </div>
-              <div id="services__block-2" className={'w-full'}>
+              <div id="services__block-2" className={'xs:mb-8 md:mb-0 w-full'}>
                 <h3
                   id="services__block-2__heading"
                   className="text-3xl font-display mb-4"
@@ -263,8 +263,8 @@ const blockByType = (block) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
-              <div id="services__block-3" className={'w-full'}>
+            <div className="xs:inline md:flex md:flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
+              <div id="services__block-3" className={'xs:mb-8 md:mb-0 w-full'}>
                 <h3
                   id="services__block-3__heading"
                   className="text-3xl font-display mb-4"
@@ -275,7 +275,7 @@ const blockByType = (block) => {
                   {block.fields.block3Subheading}
                 </p>
               </div>
-              <div id="services__block-4" className={'w-full'}>
+              <div id="services__block-4" className={'xs:mb-8 md:mb-0 w-full'}>
                 <h3
                   id="services__block-4__heading"
                   className="text-3xl font-display mb-4"
