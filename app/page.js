@@ -1,7 +1,15 @@
-import Image from "next/image";
-
+/**
+ * @file page.js
+ */
+// Import components and utils
 import { fetchBlocksBySlug } from '../utils/contentfulData';
 import Content from "./content";
+
+// Set metadata
+export const metadata = {
+  title: 'Home | Half Watt Electric',
+  description: 'Full-service installation of low-voltage equipment for fully-tested, fire-safe solutions.',
+}
 
 export default async function Home() {
   const blocksEnglish = await fetchBlocksBySlug('home', 'en-US');
