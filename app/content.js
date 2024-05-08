@@ -10,6 +10,11 @@
 // Import depdencies
 import { useState, useContext, useEffect } from "react";
 import Image from "next/image";
+import { GiRingingAlarm } from "react-icons/gi";
+import { FaGripfire } from "react-icons/fa6";
+import { TbBrandSpeedtest } from "react-icons/tb";
+import { PiSecurityCameraFill } from "react-icons/pi";
+import { FaRegLightbulb } from "react-icons/fa6";
 
 // Import components
 import { LocaleContext } from "./locale-provider";
@@ -26,7 +31,10 @@ const blockByType = (block) => {
   switch (contentType) {
     case "heroBlock":
       return (
-        <div id="hero" className="flex flex-row items-center md:gap-32 md:px-24 md:mb-64 xs:mb-32">
+        <div
+          id="hero"
+          className="flex flex-row items-center md:gap-32 md:px-24 md:mb-64 xs:mb-32"
+        >
           <div
             id="hero__image"
             className="w-1/2 xs:w-1/4 md:inline sm:hidden xs:hidden"
@@ -119,8 +127,14 @@ const blockByType = (block) => {
               />
             </div>
           </div>
-          <div className="xs:block md:flex md:flex-row md:items-center md:space-between xs:gap-24 md:gap-0" id="what-we-do__2">
-            <div id="what-we-do__image" className="xs:w-full md:w-1/2 md:pr-14 xs:mb-8 md:mb-0">
+          <div
+            className="xs:block md:flex md:flex-row md:items-center md:space-between xs:gap-24 md:gap-0"
+            id="what-we-do__2"
+          >
+            <div
+              id="what-we-do__image"
+              className="xs:w-full md:w-1/2 md:pr-14 xs:mb-8 md:mb-0"
+            >
               <div className={`border-white`}>
                 <Image
                   className={`rounded-3xl shadow-image`}
@@ -187,9 +201,13 @@ const blockByType = (block) => {
             className="flex flex-row space-between xs:gap-12 sm:gap-20 md:gap-28 md:justify-center"
           >
             {block.fields.staff.map((staff, index) => (
-              <div key={index} id={`who-we-are__profile--${index}`} className="xs:w-1/2 md:w-1/3">
+              <div
+                key={index}
+                id={`who-we-are__profile--${index}`}
+                className="xs:w-1/2 md:w-1/3"
+              >
                 <div id={`who-we-are__profile-${index}__image`}>
-                <Image
+                  <Image
                     className={`rounded-3xl`}
                     src={
                       staff.fields.image !== undefined
@@ -209,11 +227,18 @@ const blockByType = (block) => {
                     alt={staff.fields.image.fields.title}
                   />
                 </div>
-                <div id="who-we-are__profile-1__heading" className={'mt-8 pb-1'}>
-                  <h3 className={'font-bold text-xl'}>{staff.fields.heading}</h3>
+                <div
+                  id="who-we-are__profile-1__heading"
+                  className={"mt-8 pb-1"}
+                >
+                  <h3 className={"font-bold text-xl"}>
+                    {staff.fields.heading}
+                  </h3>
                 </div>
-                <div id="who-we-are__profile-1__title" className={'pb-4'}>
-                  <span className={'italic text-lg pb-2'}>{staff.fields.role}</span>
+                <div id="who-we-are__profile-1__title" className={"pb-4"}>
+                  <span className={"italic text-lg pb-2"}>
+                    {staff.fields.role}
+                  </span>
                 </div>
                 <div id="who-we-are__profile-1__subheading">
                   <div>{documentToReactComponents(staff.fields.bio)}</div>
@@ -240,64 +265,91 @@ const blockByType = (block) => {
           </div>
           <div id="services__blocks">
             <div className="xs:inline md:flex md:flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
-              <div id="services__block-1" className={'xs:mb-8 md:mb-0 w-full'}>
-                <h3
-                  id="services__block-1__heading"
-                  className="text-3xl font-display mb-4"
+              <div className={"flex flex-row"}>
+                <GiRingingAlarm className={`text-5xl mr-4`} />
+                <div
+                  id="services__block-1"
+                  className={"xs:mb-8 md:mb-0 w-full"}
                 >
-                  {block.fields.block1Heading}
-                </h3>
-                <p id="services__block-1__body">
-                  {block.fields.block1Subheading}
-                </p>
+                  <h3
+                    id="services__block-1__heading"
+                    className="text-3xl font-display mb-4"
+                  >
+                    {block.fields.block1Heading}
+                  </h3>
+                  <p id="services__block-1__body">
+                    {block.fields.block1Subheading}
+                  </p>
+                </div>
               </div>
-              <div id="services__block-2" className={'xs:mb-8 md:mb-0 w-full'}>
-                <h3
-                  id="services__block-2__heading"
-                  className="text-3xl font-display mb-4"
+              <div className={"flex flex-row"}>
+                <FaGripfire className={`text-5xl mr-4`} />
+                <div
+                  id="services__block-2"
+                  className={"xs:mb-8 md:mb-0 w-full"}
                 >
-                  {block.fields.block2Heading}
-                </h3>
-                <p id="services__block-2__body">
-                  {block.fields.block2Subheading}
-                </p>
+                  <h3
+                    id="services__block-2__heading"
+                    className="text-3xl font-display mb-4"
+                  >
+                    {block.fields.block2Heading}
+                  </h3>
+                  <p id="services__block-2__body">
+                    {block.fields.block2Subheading}
+                  </p>
+                </div>
               </div>
             </div>
             <div className="xs:inline md:flex md:flex-row mb-10 xs:gap-12 sm:gap-20 md:gap-28">
-              <div id="services__block-3" className={'xs:mb-8 md:mb-0 w-full'}>
-                <h3
-                  id="services__block-3__heading"
-                  className="text-3xl font-display mb-4"
+              <div className={"flex flex-row"}>
+                <TbBrandSpeedtest className={`text-5xl mr-4`} />
+                <div
+                  id="services__block-3"
+                  className={"xs:mb-8 md:mb-0 w-full"}
                 >
-                  {block.fields.block3Heading}
-                </h3>
-                <p id="services__block-3__body">
-                  {block.fields.block3Subheading}
-                </p>
+                  <h3
+                    id="services__block-3__heading"
+                    className="text-3xl font-display mb-4"
+                  >
+                    {block.fields.block3Heading}
+                  </h3>
+                  <p id="services__block-3__body">
+                    {block.fields.block3Subheading}
+                  </p>
+                </div>
               </div>
-              <div id="services__block-4" className={'xs:mb-8 md:mb-0 w-full'}>
-                <h3
-                  id="services__block-4__heading"
-                  className="text-3xl font-display mb-4"
+              <div className={"flex flex-row"}>
+                <PiSecurityCameraFill className={`text-5xl mr-4`} />
+                <div
+                  id="services__block-4"
+                  className={"xs:mb-8 md:mb-0 w-full"}
                 >
-                  {block.fields.block4Heading}
-                </h3>
-                <p id="services__block-4__body">
-                  {block.fields.block4Subheading}
-                </p>
+                  <h3
+                    id="services__block-4__heading"
+                    className="text-3xl font-display mb-4"
+                  >
+                    {block.fields.block4Heading}
+                  </h3>
+                  <p id="services__block-4__body">
+                    {block.fields.block4Subheading}
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex flex-row">
-              <div id="services__block-5">
-                <h3
-                  id="services__block-5__heading"
-                  className="text-3xl font-display mb-4"
-                >
-                  {block.fields.block5Heading}
-                </h3>
-                <p id="services__block-5__body">
-                  {block.fields.block5Subheading}
-                </p>
+              <div className={"flex flex-row"}>
+                <FaRegLightbulb className={`text-5xl mr-4`} />
+                <div id="services__block-5">
+                  <h3
+                    id="services__block-5__heading"
+                    className="text-3xl font-display mb-4"
+                  >
+                    {block.fields.block5Heading}
+                  </h3>
+                  <p id="services__block-5__body">
+                    {block.fields.block5Subheading}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
