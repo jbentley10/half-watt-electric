@@ -1,7 +1,7 @@
 /**
  * @file layout.js
  */
-'use client'
+"use client";
 
 // Import styles
 import "./globals.css";
@@ -68,8 +68,13 @@ export default function RootLayout({ children }) {
                   About Us
                 </Link>
               </div>
-              <div className={"font-extrabold text-zinc-600 lg:text-base sm:text-xs xs:text-xs"} id="phone">
-                <a href="tel:+19999999999">(999) 999-9999</a>
+              <div
+                className={
+                  "font-extrabold text-zinc-600 lg:text-base sm:text-xs xs:text-xs"
+                }
+                id="phone"
+              >
+                <a href="tel:+19713445857">(971) 344-5857</a>
               </div>
             </section>
           </nav>
