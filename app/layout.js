@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react"
 
 // Import components and utils
 import FloatingActionButton from "./components/floating-action-button";
@@ -79,6 +80,7 @@ export default function RootLayout({ children }) {
             </section>
           </nav>
           {children}
+          <Analytics />
           <FloatingActionButton />
         </LocaleContext.Provider>
       </body>
