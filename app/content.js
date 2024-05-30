@@ -40,9 +40,9 @@ const blockByType = (block) => {
             className="w-1/2 xs:w-1/4 md:inline sm:hidden xs:hidden"
           >
             <Image
-              src="/bolt.png"
-              width={690}
-              height={1235}
+              src={`https:${block.fields.heroImage.fields.file.url}`}
+              width={block.fields.heroImage.fields.file.details.image.width}
+              height={block.fields.heroImage.fields.file.details.image.height}
               alt="A red lightning bolt"
             />
           </div>
