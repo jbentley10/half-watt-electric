@@ -19,6 +19,8 @@ import { FaRegLightbulb } from "react-icons/fa6";
 // Import components
 import { LocaleContext } from "./locale-provider";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import LogoRow from "./components/logo-row";
+import Link from "next/link";
 
 function isEven(num) {
   return num % 2 === 0;
@@ -393,6 +395,17 @@ const blockByType = (block) => {
               </div>
             </section>
           ))}
+          {block.fields.buttonText && block.fields.buttonLink && (
+            <button
+              className={
+                "text-center m-auto w-1/2 bg-red-400 text-white border-white stroke-2 rounded-xl px-8 py-5 text-3xl font-display font-medium"
+              }
+            >
+              <Link href={block.fields.buttonLink} target='_blank'>
+                {block.fields.buttonText}
+              </Link>
+            </button>
+          )}
         </div>
       );
 
@@ -403,6 +416,12 @@ const blockByType = (block) => {
           <span className='mb-4'>{block.fields.copyrightInformation}</span>
           <span className='mb-4'>{block.fields.phoneNumber}</span>
         </footer>
+      );
+
+    case "logoRow":
+      console.log(block.fields.images[0].fields.file);
+      return (
+        <LogoRow heading={block.fields.heading} logos={block.fields.images} />
       );
 
     default:
