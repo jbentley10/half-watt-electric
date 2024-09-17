@@ -1,5 +1,6 @@
 /**
  * @file layout.js
+ *
  */
 "use client";
 
