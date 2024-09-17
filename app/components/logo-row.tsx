@@ -28,19 +28,22 @@ export default function LogoRow(props: { heading: string; logos: LogoType[] }) {
 
   return (
     <section className='w-full py-12 md:py-24 lg:py-32'>
-      <div className='container px-4 md:px-6'>
+      <div className='container px-4 md:px-6 m-auto'>
         {/* <h2 className='text-3xl text-center mb-12 font-display'>
           {props.heading}
         </h2> */}
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center'>
+        <div className='flex flex-row flex-wrap justify-center items-center'>
           {logos.map((logo: LogoType, i: number) => (
-            <div key={i} className='flex justify-center'>
+            <div
+              key={i}
+              className='flex justify-center items-center h-[120px] mx-4 my-4'
+            >
               <Image
                 src={`https:${logo.fields.file.url}`}
                 alt={`The logo of ${logo.fields.title}`}
-                width={180}
-                height={80}
-                className='max-w-[120px] md:max-w-[180px] h-auto'
+                width={120}
+                height={120}
+                className='w-[120px] h-[120px] object-contain'
               />
             </div>
           ))}
