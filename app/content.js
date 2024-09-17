@@ -210,23 +210,18 @@ const blockByType = (block) => {
               >
                 <div id={`who-we-are__profile-${index}__image`}>
                   <Image
-                    className={`rounded-full`}
+                    className={`rounded-[40%] w-112 h-96 object-cover`}
                     src={
                       staff.fields.image !== undefined
                         ? `https:${staff.fields.image.fields.file.url}`
-                        : false
+                        : "/placeholder-image.jpg"
                     }
-                    width={
-                      staff.fields.image !== undefined
-                        ? staff.fields.image.fields.file.details.image.width
-                        : false
+                    width={448}
+                    height={384}
+                    alt={
+                      staff.fields.image?.fields.title ||
+                      `${staff.fields.heading}'s profile picture`
                     }
-                    height={
-                      staff.fields.image !== undefined
-                        ? staff.fields.image.fields.file.details.image.height
-                        : false
-                    }
-                    alt={staff.fields.image.fields.title}
                   />
                 </div>
                 <div
@@ -419,7 +414,6 @@ const blockByType = (block) => {
       );
 
     case "logoRow":
-      console.log(block.fields.images[0].fields.file);
       return (
         <LogoRow heading={block.fields.heading} logos={block.fields.images} />
       );
