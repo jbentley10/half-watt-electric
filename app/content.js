@@ -20,6 +20,7 @@ import { FaRegLightbulb } from "react-icons/fa6";
 import { LocaleContext } from "./locale-provider";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import LogoRow from "./components/logo-row";
+import WhatWeDoBlock from "./components/what-we-do-block";
 import Link from "next/link";
 
 function isEven(num) {
@@ -70,118 +71,11 @@ const blockByType = (block) => {
 
     case "whatWeDoBlock":
       return (
-        <div
-          id='what-we-do'
-          className='flex flex-col sm:mb-32 md:px-24 md:mb-64 xs:mb-32'
-        >
-          <div className={"mb-20"} id='what-we-do__heading'>
-            <h2 className={"text-6xl font-display font-medium uppercase mb-4"}>
-              {block.fields.heading}
-            </h2>
-            <span className={"text-base font-body text-xl flex md:w-1/2"}>
-              {block.fields.subheading}
-            </span>
-          </div>
-          <div
-            className='xs:block md:flex md:flex-row md:items-center md:space-between xs:mb-20 md:mb-12 xs:gap-24 md:gap-0'
-            id='what-we-do__1'
-          >
-            <div className='xs:w-full md:w-1/2 md:pr-14' id='what-we-do__text'>
-              <ul>
-                <li className={"mb-12"}>
-                  <h3 className={"font-display text-3xl leading-tight mb-4"}>
-                    {block.fields.block1Heading}
-                  </h3>
-                  <p className={"font-body text-base"}>
-                    {block.fields.block1Subheading}
-                  </p>
-                </li>
-                <li className={"mb-12"}>
-                  <h3 className={"font-display text-3xl leading-tight mb-4"}>
-                    {block.fields.block2Heading}
-                  </h3>
-                  <p className={"font-body text-base"}>
-                    {block.fields.block2Subheading}
-                  </p>
-                </li>
-              </ul>
-            </div>
-
-            <div id='what-we-do__image' className='xs:w-full md:w-1/2 md:px-14'>
-              <Image
-                className={`rounded-3xl shadow-image`}
-                src={
-                  block.fields.rightImage !== undefined
-                    ? `https:${block.fields.rightImage.fields.file.url}`
-                    : false
-                }
-                width={
-                  block.fields.rightImage !== undefined
-                    ? block.fields.rightImage.fields.file.details.image.width
-                    : false
-                }
-                height={
-                  block.fields.rightImage !== undefined
-                    ? block.fields.rightImage.fields.file.details.image.height
-                    : false
-                }
-                alt={block.fields.rightImage.fields.title}
-              />
-            </div>
-          </div>
-          <div
-            className='xs:block md:flex md:flex-row md:items-center md:space-between xs:gap-24 md:gap-0'
-            id='what-we-do__2'
-          >
-            <div
-              id='what-we-do__image'
-              className='xs:w-full md:w-1/2 md:pr-14 xs:mb-8 md:mb-0'
-            >
-              <div className={`border-white`}>
-                <Image
-                  className={`rounded-3xl shadow-image`}
-                  src={
-                    block.fields.leftImage !== undefined
-                      ? `https:${block.fields.leftImage.fields.file.url}`
-                      : false
-                  }
-                  width={
-                    block.fields.leftImage !== undefined
-                      ? block.fields.leftImage.fields.file.details.image.width
-                      : false
-                  }
-                  height={
-                    block.fields.leftImage !== undefined
-                      ? block.fields.leftImage.fields.file.details.image.height
-                      : false
-                  }
-                  alt={block.fields.leftImage.fields.title}
-                />
-              </div>
-            </div>
-
-            <div className='xs:w-full md:w-1/2 md:px-14' id='what-we-do__text'>
-              <ul>
-                <li className={"mb-12"}>
-                  <h3 className={"font-display text-3xl leading-tight mb-4"}>
-                    {block.fields.block3Heading}
-                  </h3>
-                  <p className={"font-body text-base"}>
-                    {block.fields.block3Subheading}
-                  </p>
-                </li>
-                <li className={"mb-12"}>
-                  <h3 className={"font-display text-3xl leading-tight mb-4"}>
-                    {block.fields.block4Heading}
-                  </h3>
-                  <p className={"font-body text-base"}>
-                    {block.fields.block4Subheading}
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <WhatWeDoBlock
+          heading={block.fields.heading}
+          subheading={block.fields.subheading}
+          blocks={block.fields.blocks}
+        />
       );
 
     case "whoWeAreBlock":
