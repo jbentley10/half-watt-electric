@@ -10,60 +10,75 @@ function BlockWithImage(props) {
 
   return (
     <div
-      key={index}
       className={`xs:block md:flex md:items-center md:space-between xs:mb-20 md:mb-12 xs:gap-24 md:gap-0 ${
-        index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"
+        index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
       }`}
       id={`what-we-do__${index + 1}`}
     >
       <div className='xs:w-full md:w-1/2 md:px-14' id='what-we-do__text'>
         <ul>
           <li className={"mb-12"}>
-            {(() => {
-              switch (block.icon) {
-                case "alarm":
-                  return <GiRingingAlarm className={`text-5xl mr-4`} />;
-                case "fire":
-                  return <FaGripfire className={`text-5xl mr-4`} />;
-                case "dash":
-                  return <TbBrandSpeedtest className={`text-5xl mr-4`} />;
-                case "camera":
-                  return <PiSecurityCameraFill className={`text-5xl mr-4`} />;
-                case "light":
-                  return <FaRegLightbulb className={`text-5xl mr-4`} />;
-                default:
-                  return null;
-              }
-            })()}
-            <h3 className={"font-display text-3xl leading-tight mb-4"}>
-              {block.fields.heading}
-            </h3>
-            <p className={"font-body text-base"}>{block.fields.description}</p>
+            <div className='flex items-start mb-4'>
+              <div className='flex-shrink-0 w-[3.25rem] mr-4'>
+                {(() => {
+                  switch (block.fields.icon) {
+                    case "alarm":
+                      return <GiRingingAlarm className={`text-5xl`} />;
+                    case "fire":
+                      return <FaGripfire className={`text-5xl`} />;
+                    case "dash":
+                      return <TbBrandSpeedtest className={`text-5xl`} />;
+                    case "camera":
+                      return <PiSecurityCameraFill className={`text-5xl`} />;
+                    case "light":
+                      return <FaRegLightbulb className={`text-5xl`} />;
+                    default:
+                      return null;
+                  }
+                })()}
+              </div>
+              <div>
+                <h3 className={"font-display text-3xl leading-tight mb-4"}>
+                  {block.fields.heading}
+                </h3>
+                <p className={"font-body text-base"}>
+                  {block.fields.description}
+                </p>
+              </div>
+            </div>
           </li>
         </ul>
 
         <ul>
           <li className={"mb-12"}>
-            {(() => {
-              switch (block.icon2) {
-                case "alarm":
-                  return <GiRingingAlarm className={`text-5xl mr-4`} />;
-                case "fire":
-                  return <FaGripfire className={`text-5xl mr-4`} />;
-                case "dash":
-                  return <TbBrandSpeedtest className={`text-5xl mr-4`} />;
-                case "camera":
-                  return <PiSecurityCameraFill className={`text-5xl mr-4`} />;
-                case "light":
-                  return <FaRegLightbulb className={`text-5xl mr-4`} />;
-                default:
-                  return null;
-              }
-            })()}
-            <h3 className={"font-display text-3xl leading-tight mb-4"}>
-              {block.fields.heading2}
-            </h3>
-            <p className={"font-body text-base"}>{block.fields.description2}</p>
+            <div className='flex items-start mb-4'>
+              <div className='flex-shrink-0 w-[3.25rem] mr-4'>
+                {(() => {
+                  switch (block.fields.icon2) {
+                    case "alarm":
+                      return <GiRingingAlarm className={`text-5xl`} />;
+                    case "fire":
+                      return <FaGripfire className={`text-5xl`} />;
+                    case "dash":
+                      return <TbBrandSpeedtest className={`text-5xl`} />;
+                    case "camera":
+                      return <PiSecurityCameraFill className={`text-5xl`} />;
+                    case "light":
+                      return <FaRegLightbulb className={`text-5xl`} />;
+                    default:
+                      return null;
+                  }
+                })()}
+              </div>
+              <div>
+                <h3 className={"font-display text-3xl leading-tight mb-4"}>
+                  {block.fields.heading2}
+                </h3>
+                <p className={"font-body text-base"}>
+                  {block.fields.description2}
+                </p>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -102,7 +117,7 @@ function WhatWeDoBlock(props) {
         </span>
       </div>
       {props.blocks.map((block, index) => (
-        <BlockWithImage key={index} block={block} />
+        <BlockWithImage key={index} index={index} block={block} />
       ))}
     </div>
   );
