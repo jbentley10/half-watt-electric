@@ -84,19 +84,21 @@ function BlockWithImage(props) {
       </div>
 
       <div id='what-we-do__image' className='xs:w-full md:w-1/2 md:px-14'>
-        <Image
-          className={`rounded-3xl shadow-image`}
-          src={
-            `https:${block.fields.image?.fields.file.url}` ||
-            "/placeholder-image.jpg"
-          }
-          width={block.fields.image?.fields.file.details.image.width || 500}
-          height={block.fields.image?.fields.file.details.image.height || 300}
-          alt={
-            block.fields.image?.fields.file.fileName ||
-            `Image for ${block.heading}`
-          }
-        />
+        <div className='max-w-[500px] max-h-[400px] mx-auto overflow-hidden rounded-3xl'>
+          <Image
+            className={`rounded-3xl shadow-image w-full h-full object-cover`}
+            src={
+              `https:${block.fields.image?.fields.file.url}` ||
+              "/placeholder-image.jpg"
+            }
+            width={block.fields.image?.fields.file.details.image.width || 500}
+            height={block.fields.image?.fields.file.details.image.height || 300}
+            alt={
+              block.fields.image?.fields.file.fileName ||
+              `Image for ${block.heading}`
+            }
+          />
+        </div>
       </div>
     </div>
   );
