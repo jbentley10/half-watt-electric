@@ -94,17 +94,17 @@ const blockByType = (block) => {
           </div>
           <div
             id='who-we-are__profiles'
-            className='flex flex-row space-between xs:gap-12 sm:gap-20 md:gap-28 md:justify-center'
+            className='flex flex-col xs:flex-col sm:flex-row space-between xs:gap-12 sm:gap-20 md:gap-28 md:justify-center'
           >
             {block.fields.staff.map((staff, index) => (
               <div
                 key={index}
                 id={`who-we-are__profile--${index}`}
-                className='xs:w-1/2 md:w-1/3'
+                className='xs:w-full sm:w-1/2 md:w-1/3 mb-8 sm:mb-0'
               >
                 <div id={`who-we-are__profile-${index}__image`}>
                   <Image
-                    className={`rounded-[40%] w-112 h-96 object-cover`}
+                    className={`rounded-[40%] w-full max-w-[448px] h-auto object-cover mx-auto`}
                     src={
                       staff.fields.image !== undefined
                         ? `https:${staff.fields.image.fields.file.url}`
