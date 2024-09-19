@@ -87,7 +87,7 @@ function BlockWithImage(props) {
         <Image
           className={`rounded-3xl shadow-image`}
           src={
-            `https://${block.fields.image?.fields.file.url}` ||
+            `https:${block.fields.image?.fields.file.url}` ||
             "/placeholder-image.jpg"
           }
           width={block.fields.image?.fields.file.details.image.width || 500}
