@@ -261,29 +261,30 @@ const blockByType = (block) => {
               {block.fields.subheading}
             </span>
           </div>
-          {block.fields.testimonialBlocks.map((testimonial, index) => (
-            <section
-              className={`flex flex-col xs:mb-20 md:mb-0 ${
-                isEven(index) ? "items-start" : "items-end"
-              }`}
-              key={index + 2}
-              id='testimonial-block'
-            >
-              <div className={`flex flex-col items-start`}>
-                <blockquote className='italic text-2xl border-solid border-zinc-600 border-l-8 py-6 pl-4 mb-4'>
-                  {documentToReactComponents(testimonial.fields.quote)}
-                </blockquote>
-                <div className={`flex flex-col pl-7`} id='attribute'>
-                  <div id='attribute-name'>
-                    {testimonial.fields.customerName}
-                  </div>
-                  <div className='italic' id='attribute-company'>
-                    {testimonial.fields.customerCompany}
+          {block.fields.testimonialBlocks &&
+            block.fields.testimonialBlocks.map((testimonial, index) => (
+              <section
+                className={`flex flex-col xs:mb-20 md:mb-0 ${
+                  isEven(index) ? "items-start" : "items-end"
+                }`}
+                key={index + 2}
+                id='testimonial-block'
+              >
+                <div className={`flex flex-col items-start`}>
+                  <blockquote className='italic text-2xl border-solid border-zinc-600 border-l-8 py-6 pl-4 mb-4'>
+                    {documentToReactComponents(testimonial.fields.quote)}
+                  </blockquote>
+                  <div className={`flex flex-col pl-7`} id='attribute'>
+                    <div id='attribute-name'>
+                      {testimonial.fields.customerName}
+                    </div>
+                    <div className='italic' id='attribute-company'>
+                      {testimonial.fields.customerCompany}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
-          ))}
+              </section>
+            ))}
           {block.fields.buttonText && block.fields.buttonLink && (
             <button
               className={
