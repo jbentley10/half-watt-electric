@@ -17,6 +17,7 @@ import { Analytics } from "@vercel/analytics/react";
 // Import components and utils
 import FloatingActionButton from "./components/floating-action-button";
 import { LocaleContext } from "./locale-provider";
+import Script from "next/script";
 
 // Declare fonts
 const inter = Inter({ subsets: ["latin"] });
@@ -85,6 +86,16 @@ export default function RootLayout({ children }) {
           <Analytics />
           <FloatingActionButton />
         </LocaleContext.Provider>
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=G-QH7GEBHRLH'
+          strategy='beforeInteractive'
+        />
+        <Script id='gtag-script'>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QH7GEBHRLH');`}
+        </Script>
       </body>
     </html>
   );
