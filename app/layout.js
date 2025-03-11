@@ -40,13 +40,15 @@ export default function RootLayout({ children }) {
               className='md:w-1/2 sm:w-2/6 xs:w-1/4 lg:pl-36 md:pl-24 sm:pl-8 xs:pl-4'
               id='logo'
             >
-              <Image
-                width={286}
-                height={144}
-                src='/hwe-logo.png'
-                alt='Half-Watt Electric logo'
-                className='sm:w-1/3 xs:w-full'
-              />
+              <Link href='/'>
+                <Image
+                  width={286}
+                  height={144}
+                  src='/hwe-logo.png'
+                  alt='Half-Watt Electric logo'
+                  className='sm:w-1/3 xs:w-full'
+                />
+              </Link>
             </section>
             <section
               className='md:w-1/2 sm:w-4/6 xs:w-3/4 flex flex-row xs:justify-end md:space-evenly lg:justify-end align-center items-center lg:pr-36 md:pr-24 sm:pr-2 xs:pr-4'
@@ -64,6 +66,12 @@ export default function RootLayout({ children }) {
                   href='#testimonials'
                 >
                   Testimonials
+                </Link>
+                <Link
+                  className='hover:opacity-50 md:mr-6 sm:mr-4 xs:mr-2 font-semibold lg:text-base sm:text-xs xs:text-xs'
+                  href='/contact'
+                >
+                  Contact Us
                 </Link>
                 <Link
                   className='hover:opacity-50 md:mr-6 sm:mr-4 xs:mr-2 font-semibold lg:text-base sm:text-xs xs:text-xs'

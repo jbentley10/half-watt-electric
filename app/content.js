@@ -58,13 +58,15 @@ const blockByType = (block) => {
                 {block.fields.subHeading}
               </span>
             </div>
-            <button
-              className={
-                "bg-red-400 text-white border-white stroke-2 rounded-xl px-8 py-5 text-3xl font-display font-medium"
-              }
-            >
-              Get a quote
-            </button>
+            <Link href={block.fields.buttonLink}>
+              <button
+                className={
+                  "bg-red-400 text-white border-white stroke-2 rounded-xl px-8 py-5 text-3xl font-display font-medium"
+                }
+              >
+                Get a quote
+              </button>
+            </Link>
           </div>
         </div>
       );
