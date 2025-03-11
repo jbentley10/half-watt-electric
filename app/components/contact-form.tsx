@@ -92,7 +92,7 @@ export function ContactForm() {
 				value={formData.firstName}
 				onChange={handleChange}
 				required
-				placeholder="John"
+				placeholder="Alessandro"
 			/>
 			</div>
 			<div className="space-y-2">
@@ -102,7 +102,7 @@ export function ContactForm() {
 				value={formData.lastName}
 				onChange={handleChange}
 				required
-				placeholder="Doe"
+				placeholder="Volta"
 			/>
 			</div>
 		</div>
